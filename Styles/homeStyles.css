@@ -1,43 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@300;400;500;600;700&display=swap');
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #f2f2f2;
-}
 
 section{
-  position: relative;  
-  height: 450px;
+  height: fit-content;
   width: 70%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 30px;
+}
+
+section .title {
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  border-bottom: 1px solid #d6ae7b;
+  margin-bottom: 30px;
+  font-family: 'Alkatra', cursive;
+  font-size: 30px;
 }
 
 .swiper{
-  width: 950px;
+  width: 70%;
 }
 
 .card{
-  position: relative;
   background: #fff;
   margin: 0;
+  border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card::before{
   content: "";
-  position: absolute;
   height: 40%;
   width: 100%;
   background: #FF676D;
@@ -45,13 +41,12 @@ section{
 }
 
 .card .card-content{
-  position: relative;
   z-index: 100;
 }
 
 section .card img{
-  height: 100%;
   width: 100%;
+  border-radius: 20px;
   object-fit: cover;
 }
 
@@ -61,11 +56,12 @@ section .card .link {
   position: absolute;
   padding-top: 7px;
   text-decoration: none;
-  bottom: 0px;
+  bottom: 10px;
   left: 50%;
   text-align: center;
   transform: translate(-50%, 0);
   color: white;
+  border-radius: 0 0 20px 20px;
 }
 
 section .card .link:hover {
@@ -91,14 +87,5 @@ section .card .link:hover {
 .swiper-button-next:hover, .swiper-button-prev:hover{
   opacity: 1;
   color: #FF676D;
-}
-.credit a{
-  text-decoration: none;
-  color: #FF676D;
-  font-weight: 800;
-}
-.credit {
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
