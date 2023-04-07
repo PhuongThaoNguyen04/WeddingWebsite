@@ -37,51 +37,51 @@
                 </p>
                 <hr >
             </div>  
-            <form action="" method="post">
+            <form id="contact-form"  >
+                <div class="field-wrapper">
+                    <input type="text" class="form-control contact-controls" id="Wife" name="wife" placeholder="Bride" required>
+                    <label class="contact-lable" for="Wife"></label>
+                    <p id="alert wife" class="alert"> Missing field </p>
+                </div>
+                <div class="field-wrapper">
+                    <input type="text" class="form-control contact-controls" id="Husband" name="husband" placeholder="Groom" required>
+                    <label class="contact-lable" for="Husband"></label>
+                    <p class="alert husband"> Missing field </p>
+                </div>
+                <div class="field-wrapper">
+                    <input type="number" class="form-control contact-controls" id="Number" name="phonenumber" placeholder="Phone Number" required>
+                    <label class="contact-lable" for="Number"></label>
+                    <p class="alert phonenumber"> Missing field </p>
+                </div>
+                <div class="field-wrapper">
+                    <input type="email" class="form-control contact-controls" id="Email" name="email" placeholder="Email" required>
+                    <label class="contact-lable" for="Email"></label>
+                    <p class="alert email"> Missing field </p>
+                </div>
+                <div class="field-wrapper">
+                    <input type="date" class="form-control contact-controls" id="Date" name="date" placeholder="Event Date" required>
+                    <label class="contact-lable" for="Date"></label> 
+                    <p class="alert date"> Missing field </p>       
+                </div>
                 <div >
-                    <div >
-                        <input type="text" class="form-control contact-controls" id="Wife" name="wife" placeholder="Bride" required>
-                        <label class="contact-lable" for="Wife"></label>
-                    </div>
+                    date of the wedding 
+                </div>
+                <div class="field-wrapper">
+                    <textarea class="form-control contact-controls" placeholder="Message" name="notes" id="Message"></textarea>
+                    <label for="Message"></label>
                 </div>
                 <div>
-                    <div>
-                        <input type="text" class="form-control contact-controls" id="Husband" name="husband" placeholder="Groom" required>
-                        <label class="contact-lable" for="Husband"></label>
-                    </div>
+                    <input type="submit" value="Submit" >
                 </div>
-                <div>
-                    <div>
-                        <input type="number" class="form-control contact-controls" id="Number" name="phonenumber" placeholder="Phone Number" required>
-                        <label class="contact-lable" for="Number"></label>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <input type="email" class="form-control contact-controls" id="Email" name="email" placeholder="Email" required>
-                        <label class="contact-lable" for="Email"></label>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <input type="date" class="form-control contact-controls" id="Date" name="date" placeholder="Event Date" required>
-                        <label class="contact-lable" for="Date"></label>
-                    </div>
-                    <div >
-                        date of the wedding 
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <textarea class="form-control contact-controls" placeholder="Message" name="notes" id="Message"></textarea>
-                        <label for="Message"></label>
-                    </div>
+                <div class="submission">
+                    Submitted Successfully
                 </div>
             </form>
         </div> 
         <div class="contact-img">
             <img src="../Image/contact/5.jpg" alt="" width="100%" height="100%">
         </div>
+        
     </div>   
     <footer>
         <div class="content social">
@@ -106,23 +106,28 @@
                 <p>1234567890</p>
             </div>
         </div>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script type="text/javascript">
-        var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        slidesPerGroup: 3,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        });
-    </script>
     </footer>
+    <script type="text/javascript">
+        const wife = document.getElementById('Wife');
+        wife.addEventListener("input", (e)=> {e.preventDefault(); console.log(wife.value)});
+        
+        // handle submit contact form
+        const contactForm = document.getElementById('contact-form');
+        function handleForm(event) { 
+            event.preventDefault(); 
+            const submission = document.getElementsByClassName('submission')[0];
+            submission.classList.add('active');
+        } 
+        contactForm.addEventListener('submit', handleForm);
+
+        
+        
+
+        function toggleAlert(field){
+            var element= document.getElementById(field);
+            element.classList.add("active");
+        }
+        
+    </script>
 </body>
+</html>
